@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>document.documentElement.dataset.theme = localStorage.getItem("postman-theme") === "light" ? "light" : "dark";</script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#131314" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#f8fafd" media="(prefers-color-scheme: light)" />
+        <title>Requestly</title>
+        <style>
+            html, body, #root { width: 100%; min-width: 320px; min-height: 100%; margin: 0; }
+            body { background: #131314; }
+            html[data-theme="light"] body, html[data-theme="light"] .initial-postman-boot { background: #f8fafd; }
+            html[data-theme="light"] .initial-postman-boot { color: #3c4043; }
+            .initial-postman-boot { display: grid; position: fixed; inset: 0; place-content: center; gap: 24px; background: #131314; color: #e3e3e3; font-family: Roboto, Arial, sans-serif; }
+            .initial-postman-brand { display: flex; align-items: center; gap: 13px; font-size: 25px; }
+            .initial-postman-mark { display: grid; position: relative; width: 44px; height: 44px; overflow: hidden; place-items: center; border-radius: 8px; background: linear-gradient(135deg, #ff6c37 0%, #e65100 100%); color: #fff; font-size: 20px; font-weight: 700; box-shadow: 0 2px 8px rgba(255, 108, 55, 0.35); }
+            .initial-postman-progress { width: 154px; height: 3px; margin: 0 auto; overflow: hidden; border-radius: 2px; background: #394457; }
+            .initial-postman-progress::after { display: block; width: 42%; height: 100%; border-radius: inherit; background: #ff6c37; content: ""; animation: initial-progress 900ms ease-in-out infinite; }
+            @keyframes initial-progress { 0% { transform: translateX(-110%) scaleX(.75); } 50% { transform: translateX(95%) scaleX(1.15); } 100% { transform: translateX(310%) scaleX(.7); } }
+            @media (prefers-reduced-motion: reduce) { .initial-postman-progress::after { animation: none; transform: translateX(70%); } }
+        </style>
+    </head>
+    <body>
+        <div id="root"><main class="initial-postman-boot" aria-hidden="true"><div class="initial-postman-brand"><span class="initial-postman-mark">R</span><span>Requestly</span></div><div class="initial-postman-progress"></div></main></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
+</html>
